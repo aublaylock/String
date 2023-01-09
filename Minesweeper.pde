@@ -35,9 +35,9 @@ void draw(){
     for(Button button:row){
       button.show();
       button.setNum(4);
-//      if(button.isBomb() && !button.isFlagged()){
-//        allBombsAreFlagged = false;
-//      }
+      if(button.isBomb() && !button.isFlagged()){
+        allBombsAreFlagged = false;
+      }
       if(button.isFlagged() && !button.isBomb())
         allNonBombsAreNotFlagged = false;
     }
@@ -156,7 +156,7 @@ public void lost(){
   hasLost = true;
   for(Button[] row:testButtons)
     for(Button button:row)
-      if(button.isBomb)
+      if(button.isBomb())
         button.uncover();
 }
 
